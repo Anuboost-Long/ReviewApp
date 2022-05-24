@@ -3,9 +3,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { moderateScale } from "react-native-size-matters";
 import { Fonts } from "../Src/Constant";
-import Home from "../Src/Screens/Home";
 import Reviews from "../Src/Screens/Review";
 import { colors, metrics } from "../Src/Theme";
+import BottomTabsNavigation from "./TabsNavigation";
 
 const StackScreen = createNativeStackNavigator();
 
@@ -14,6 +14,11 @@ export default function NavigationContainerRoot() {
     <NavigationContainer>
       <StackScreen.Navigator
         screenOptions={{
+          headerTintColor: colors.sandPaper,
+          headerBackTitleStyle: {
+            fontSize: metrics.font.note,
+            fontFamily: Fonts.LIGHT,
+          },
           headerTitleAlign: "center",
           headerTitleStyle: {
             fontFamily: Fonts.BOLD,
@@ -26,7 +31,11 @@ export default function NavigationContainerRoot() {
           },
         }}
       >
-        <StackScreen.Screen name="HomeScreen" component={Home} />
+        <StackScreen.Screen
+          name="Home"
+          component={BottomTabsNavigation}
+          options={{ headerShown: false }}
+        />
         <StackScreen.Screen name="Reviews" component={Reviews} />
       </StackScreen.Navigator>
     </NavigationContainer>
