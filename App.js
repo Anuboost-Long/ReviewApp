@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useFonts } from "expo-font";
-Home;
+import Home from "./Src/Screens/Home";
+import NavigationContainerRoot from "./routes/RootStackNavigator";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function App() {
   const [loaded] = useFonts({
@@ -13,5 +15,9 @@ export default function App() {
     return null;
   }
 
-  return <Navigator />;
+  return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainerRoot />
+    </GestureHandlerRootView>
+  );
 }

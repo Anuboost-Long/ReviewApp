@@ -3,6 +3,7 @@ import { Text, View, FlatList, TouchableOpacity } from "react-native";
 import { GlobalStyles } from "../Styles/Global";
 
 export default function Home({ navigation }) {
+  console.log(navigation, "BRUHHH");
   const [reviews, setReviews] = useState([
     {
       title: "Zelda, Breath of Fresh Air",

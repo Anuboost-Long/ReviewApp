@@ -7,7 +7,6 @@ export const GlobalStyles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    alignItems: "start",
     backgroundColor: colors.lightGray,
   },
   titleText: {
